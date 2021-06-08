@@ -23,6 +23,15 @@ public class Employee {
 			this.salary = salary;
 
 		}
+		
+
+		public double getSalary() {
+			return salary;
+		}
+
+		public void setSalary(double salary) {
+			this.salary = salary;
+		}
 
 		public String getDetails() {
 			return "ID: " + employeeId + " First Name: " + firstName + " Last Name: " + lastName + " Email: " + email;
