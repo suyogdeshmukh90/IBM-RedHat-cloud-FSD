@@ -24,11 +24,11 @@ public class Ebook extends Book {
 		this.sizeMb = sizeMb;
 	}
 	
-	@Override
-	public String getDetails()
-	{
-		return super.getDetails()+"Downoad Site: "+getDownloadSite()+"SizeMb: "+getSizeMb();
-	}
+//	@Override
+//	public String getDetails()
+//	{
+//		return super.getDetails()+"Download Site: "+getDownloadSite()+"SizeMb: "+getSizeMb();
+//	}
 	public double getPageSize()
 	{
 		double psize;

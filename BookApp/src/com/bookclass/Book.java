@@ -48,12 +48,12 @@ public class Book {
 		this.pages = pages;
 	}
 	
-	public String getDetails()
-	{
-		return "Author Name: "+ getAuthorName()+"Cost Price "+ getCostPrice()+"Sale Price: "+getSalePrice()+
-				"Title: "+getTitle()+"Pages: "+getPages();
-		
-	}
+//	public String getDetails()
+//	{
+//		return "Author Name: "+ getAuthorName()+"Cost Price "+ getCostPrice()+"Sale Price: "+getSalePrice()+
+//				"Title: "+getTitle()+"Pages: "+getPages();
+//		
+//	}
 	public double getProfit()
 	{
 		double profit;
