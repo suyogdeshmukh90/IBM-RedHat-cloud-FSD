@@ -9,16 +9,15 @@ public class Emp {
 	public Emp() {
 		super();
 	}
-	public final void createEmp(String empName, double salary)
+	public Emp(String empName, double salary)
 	{
+		super();
 		this.empName=empName;
 		this.salary=salary;
 	}
 	
 	
-	public final String getDetails() {
-		return "Employee Name: " + empName + " Salary: " + salary;
-	}
+
 
 	@Override
 	public String toString() {
