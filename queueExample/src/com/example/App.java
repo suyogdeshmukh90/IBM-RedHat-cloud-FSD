@@ -14,6 +14,9 @@ public class App {
 		{
 		System.out.println("1. Push");
 		System.out.println("2.Pop");
+		System.out.println("3. Search");
+		System.out.println("4. Display Queue!");
+		System.out.println("5. Sort the Queue ");
 		System.out.println("0. Exit");
 		System.out.println("Enter the choice...");
 		ch = scanner.nextInt();
@@ -27,6 +30,26 @@ public class App {
 		case 2:
 			mq.pop();
 			break;
+		
+		case 3:
+			System.out.println("Enter the value to search in Queue.");
+			int value = scanner.nextInt();
+			mq.searchQueue(value);
+		case 4:
+			int[] myQueue=mq.displayQueue();
+			for(int i:myQueue)
+			{
+				System.out.print(i+" ");
+			}
+			break;
+		case 5:
+			int[] sQueue=mq.sortedQueue();
+			for(int i:sQueue)
+			{
+				System.out.print(i+" ");
+			}
+			break;
+			
 		case 0:
 			System.out.println("Exiting....Bye Bye!!!");
 			System.exit(0);

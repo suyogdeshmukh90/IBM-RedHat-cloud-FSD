@@ -1,7 +1,9 @@
 package com.example;
 
+import java.util.Arrays;
+
 public class QueueEx {
-	private int[] info;
+	private int[] container;
 	private int size;
 	private int front;
 	private int rear;
@@ -12,7 +14,7 @@ public class QueueEx {
 	public void createQueue(int size)
 	{
 		this.size=size;
-		info = new int[this.size];
+		container = new int[this.size];
 		System.out.println("Queue Created Successfully...");
 	}
 	
@@ -24,7 +26,7 @@ public class QueueEx {
 		}
 		else
 		{
-			info[++front]=value;
+			container[++front]=value;
 			System.out.println("Pushed Successfully");
 			++rear;
 		}
@@ -39,8 +41,41 @@ public class QueueEx {
 		}
 		else
 		{
-			System.out.println("Poped Successfully - "+info[rear--]);
+			System.out.println("Poped Successfully - "+container[rear--]);
 			front--;
 		}
+	}
+	public void searchQueue(int item)
+	{
+		int location=Arrays.binarySearch(container, item);
+		if(location<0)
+		{
+			System.out.println("Item Not Found!");
+		}
+		else
+		{
+			System.out.println("Item Found At "+location+" postion");
+		}
+	}
+	public int[] displayQueue()
+	{
+		return container;
+	}
+	public int[] sortedQueue()
+	{
+//		for(i=0;i<size-1;i++)
+//		{
+//			for(int j=1;j<size;j++)
+//			{
+//				if(container[j]>container[j+1])
+//				{
+//					int temp=container[j];
+//					container[j]=container[j+1];
+//					container[j+1]=temp;
+//				}
+//			}
+//		}
+		 Arrays.sort(container);
+		return container;
 	}
 }
