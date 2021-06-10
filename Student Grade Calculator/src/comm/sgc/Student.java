@@ -38,12 +38,12 @@ public class Student {
 	public void calculateAvg()
 	{
 		int total=0;
-		for(int i=0;i<getMarks().length;i++)
+		for(int i=0;i<marks.length;i++)
 		{
 			total=total+marks[i];
 			
 		}
-		average=total/getMarks().length;
+		average=total/marks.length;
 		
 	}
 	public float getAverage()

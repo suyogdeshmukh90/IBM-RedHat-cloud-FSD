@@ -43,7 +43,9 @@ public class StudentMain {
 		
 		
 		Student sm=getStudentDetails();
-//		std=getStudentDetails();
+		
+		sm.calculateAvg();
+		sm.findGrade();
 		System.out.println("Average is "+sm.getAverage());
 		System.out.println("Grade is "+sm.getGrade());
 	}
