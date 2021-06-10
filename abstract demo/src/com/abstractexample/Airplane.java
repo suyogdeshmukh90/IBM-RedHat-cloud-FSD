@@ -1,6 +1,6 @@
 package com.abstractexample;
 
-public class Car extends Vehicle implements Sailer{
+public abstract class Airplane extends Vehicle{
 	private double start;
 	private double end;
 	private double efficiency;
@@ -26,18 +26,16 @@ public class Car extends Vehicle implements Sailer{
 	public double fuelEfficiency(double fuelConsumed) {
 		
 		if(fuelConsumed<10) {
-		System.out.println("Please Enter valid value.");
-		return 0;
-		}
-		else {
-		efficiency=distance/fuelConsumed;
-		return efficiency;
-		}
+			System.out.println("Please Enter valid value.");
+			return 0;
+			}
+			else {
+			efficiency=distance/fuelConsumed;
+			return efficiency;
+			}
 	}
 	
-	public void dock()
-	{
-		System.out.println("Give Permision to land on airport");
-	}
-
+	public abstract void takeOf();
+	public abstract void fly();
+	public abstract void land();
 }
