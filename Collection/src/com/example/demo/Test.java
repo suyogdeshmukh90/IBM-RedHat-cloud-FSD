@@ -19,6 +19,20 @@ public class Test {
 	}
 	
 	private static Scanner scanner=new Scanner(System.in);
+	private void checkPrice(double price)
+	{
+		if(price<=100)
+		{
+			throw new InvalidPriceException("Invalid Price");
+		}
+	}
+	private void checkName(String name)
+	{
+		if(name.length()<=5)
+		{
+			throw new InvalidNameException("Invalid Name");
+		}
+	}
 	public static void main(String args[])
 	
 	{
@@ -41,8 +55,11 @@ public class Test {
 				case 1:
 					System.out.print("Beer Name: ");
 					String name=scanner.next();
+					tester.checkName(name);
 					System.out.print("Beer Price: ");
 					double price=scanner.nextDouble();
+					
+					tester.checkPrice(price);
 					tester.map.put(key++, new Beer(UUID.randomUUID().toString(), name, price));
 					System.out.println("Beer Added Sucessfully...");
 					break;
@@ -95,8 +112,11 @@ public class Test {
 					{
 						System.out.print("Enter New Beer Name: ");
 						String nname=scanner.next();
+						tester.checkName(nname);
+						
 						System.out.print("Enter New Beer Price: ");
 						double nprice=scanner.nextDouble();
+						tester.checkPrice(nprice);
 						tester.map.put(id, new Beer(UUID.randomUUID().toString(), nname, nprice));
 						System.out.println("Beer Updated Successfully...");
 						break;
