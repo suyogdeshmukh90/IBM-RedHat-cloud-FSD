@@ -30,7 +30,7 @@ public class App {
 				}
 				catch(InputMismatchException im)
 				{
-					System.out.println("Enter the correct input");
+					System.err.println("Enter the correct input");
 					i--;
 					continue;
 				}
@@ -42,7 +42,7 @@ public class App {
 					System.out.println(app.todos[i]);
 					
 				} catch (ArrayIndexOutOfBoundsException e) {
-					System.out.println("Array Index Out Of Bound.");
+					System.err.println("Array Index Out Of Bound.");
 					
 				}
 				
