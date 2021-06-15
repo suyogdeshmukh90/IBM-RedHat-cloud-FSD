@@ -1,5 +1,4 @@
-anatomy
-animation
+anatomy animation
 applet
 application
 argument

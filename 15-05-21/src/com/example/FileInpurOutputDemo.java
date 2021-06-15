@@ -21,7 +21,8 @@ public class FileInpurOutputDemo {
 				while((c=inputStream.read())!=-1)
 				{
 					System.out.println(c);
-					outputStream.write(c);
+					
+						outputStream.write(c);
 				}
 				
 		}catch(FileNotFoundException e)
