@@ -21,10 +21,12 @@ public class FileManipulation {
 			System.out.println(ch);
 			if(ch==13||ch==10)
 				outputStream.write(ch);
-			else
+//			else if(ch>=65&&ch<=90)
+//				outputStream.write(ch+2);
+//			else if(ch>=97&&ch<=122)
+//				outputStream.write(ch+2);
+			else 
 				outputStream.write(ch+2);
-			 
-				
 		}
 		
 			inputStream.close();
