@@ -118,10 +118,17 @@ public class Test {
 			System.out.println("Done Saved into File successfully!");
 			break;
 		case 6:
-			fileInputStream = new FileInputStream(file);
-			objectInputStream = new ObjectInputStream(fileInputStream);
-			Set<Student> set1=(Set<Student>)objectInputStream.readObject();
-			System.out.println(set1);
+			fileOutputStream=new FileOutputStream(file);
+			objectOutputStream=new ObjectOutputStream(fileOutputStream);
+			objectOutputStream.writeObject(set);
+			if(set.isEmpty())
+				System.out.println("No values available");
+			else {
+				fileInputStream = new FileInputStream(file);
+				objectInputStream = new ObjectInputStream(fileInputStream);
+				Set<Student> set1=(Set<Student>)objectInputStream.readObject();
+				System.out.println(set1);
+			}
 		}
 		}while(choice!=0);
 	}
