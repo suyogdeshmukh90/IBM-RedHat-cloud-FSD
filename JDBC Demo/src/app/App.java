@@ -3,16 +3,18 @@ package app;
 import java.util.List;
 import java.util.Random;
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Iterator;
 
 import com.demo.Employee;
 
-
+import com.file.FileToDatabase;
 
 import service.EmployeeService;
 import service.EmployeeServiceImpl;
@@ -20,6 +22,8 @@ import service.EmployeeServiceImpl;
 public class App {
 
 	public static void main(String[] args) throws SQLException, NumberFormatException, IOException {
+		FileToDatabase fd=new FileToDatabase();
+		
 		EmployeeService service=new EmployeeServiceImpl();
 		Employee emp;
 		BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(System.in));
@@ -28,6 +32,7 @@ public class App {
 		System.out.println("1. Create a new employee");
 		System.out.println("2.Display all employees from database");
 		System.out.println("3.Find employee in database ");
+		System.out.println("4.Create Employee from File");
 		System.out.println("0. Exit");
 		System.out.println("Select your choice...");
 		choice=Integer.parseInt(bufferedReader.readLine());
@@ -68,25 +73,35 @@ public class App {
 			
 			if(flag==0)
 				System.out.println("Employee not found!");
-			
-			
-//			
-//			while(it.hasNext())
-//			{
-//				if(searchId==((Employee) employee).getId())
-//				{
-//					System.out.println("Employee found! ");
-//					System.out.println(emp);
-//					flag=1;
-//				}
-//			}
-//			
+						
 			break;
 		case 0:
 			System.out.println("Exiting...Bye!!!");
 			System.exit(0);
 			break;
+			
 		case 4:
+			try {
+			System.out.println("Enter the File name ");
+			String file1=bufferedReader.readLine();
+			List<Employee> list=fd.createFromFile(file1);
+			Iterator<Employee> i=list.iterator();
+			while(i.hasNext())
+			{
+				Employee emp1=i.next();
+				emp=service.createEmployee(new Employee(new Random().nextInt(100),emp1.getFirstName(),emp1.getLastName(),emp1.getEmail()));
+			}
+			
+			System.out.println("Employee Details added from file successfully!");
+			}catch(FileNotFoundException e)
+			{
+				System.err.println("File not available. Please try again");
+			}
+			
+			
+			
+			break;
+		default:
 			System.out.println("Enter valid details...");
 			break;
 		}
