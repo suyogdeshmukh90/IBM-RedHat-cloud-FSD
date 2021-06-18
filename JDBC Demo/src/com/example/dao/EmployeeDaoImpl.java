@@ -1,6 +1,7 @@
 package com.example.dao;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -17,21 +18,27 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	
 	public EmployeeDaoImpl() throws SQLException
 	{
-		list =new ArrayList<Employee>();
+		
 		factory=factory.createFactory();
 		connection=factory.getMyConnection();
 	}
 	@Override
-	public Employee createEmployee(Employee employee) {
+	public Employee createEmployee(Employee employee) throws SQLException {
+		PreparedStatement preparedStatement=connection.prepareStatement("insert into employee(employee_id,first_name,last_name,email)values(?,?,?,?)");
+		preparedStatement.setInt(1, employee.getId());
+		preparedStatement.setString(2, employee.getFirstName());
+		preparedStatement.setString(3, employee.getLastName());
+		preparedStatement.setString(4, employee.getEmail());
+		int result=preparedStatement.executeUpdate();
+		System.out.println(result+" rows added successfully!");
 		
 		
-		
-		return null;
+		return employee;
 	}
 
 	@Override
 	public List<Employee> getAllEmployees() throws SQLException {
-		
+		list =new ArrayList<Employee>();
 		Statement statement=connection.createStatement();
 		ResultSet resultSet=statement.executeQuery("select * from employee");
 		
@@ -41,6 +48,15 @@ public class EmployeeDaoImpl implements EmployeeDao {
 					resultSet.getString(4)));
 		}
 		return list;
+	}
+	
+	public ResultSet searchEmployee(int searchId) throws SQLException {
+		list=new  ArrayList<Employee>();
+		PreparedStatement state=connection.prepareStatement("select * from employee where employee_id=?");
+		state.setInt(1,searchId);
+		ResultSet result=state.executeQuery();
+		
+		return result;
 	}
 
 }
