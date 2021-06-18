@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 import com.demo.Employee;
 import com.factory.FactoryConnection;
@@ -15,7 +16,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 	private List<Employee> list;
 	private FactoryConnection factory;
 	private Connection connection;
-	
+	private static Scanner sc=new Scanner(System.in);
 	public EmployeeDaoImpl() throws SQLException
 	{
 		
@@ -58,5 +59,67 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		
 		return result;
 	}
+	
+	public Employee updateEmployee(int id) throws SQLException, EmployeeNotFoundException
+	{
+		ResultSet list=searchEmployee(id);
+		
+		List<Employee> list1=new ArrayList<Employee>();
+		while(list.next())
+		{
+			list1.add(new Employee(list.getInt(1),list.getString(2),list.getString(3),list.getString(4)));
+			
+		}
+		if(list1.isEmpty())
+		{
+			throw new EmployeeNotFoundException("Employee not found with id "+id);
+		}
+		
+		System.out.println("enter new first name: ");
+		String firstName =sc.next();
+		firstName=firstName.toUpperCase();
+		System.out.println("enter new last name: ");
+		String lastName = sc.next();
+		lastName=lastName.toUpperCase();
+		System.out.println("enter new email: ");
+		String email = sc.next();
+		email=email.toLowerCase();
+		PreparedStatement preparedStatement=connection.prepareStatement("update employee set first_name=?,last_name=?,email=? where employee_id=?");
+		preparedStatement.setString(1, firstName);
+		preparedStatement.setString(2, lastName);
+		preparedStatement.setString(3, email);
+		preparedStatement.setInt(4, id);
+		preparedStatement.executeUpdate();
+		System.out.println("updation sucessfull!");
+		
+		 Employee emp=list1.get(0);
+				emp.setFirstName(firstName);
+				emp.setLastName(lastName);
+				emp.setEmail(email);
+		
+		return emp;
+	}
+	
+	public List<Employee> deleteEmployee(int id) throws SQLException, EmployeeNotFoundException
+	{
+			ResultSet list=searchEmployee(id);
 
+			List<Employee> list1=new ArrayList<Employee>();
+			while(list.next())
+			{
+				list1.add(new Employee(list.getInt(1),list.getString(2),list.getString(3),list.getString(4)));
+				
+			}
+			if(list1.isEmpty())
+			{
+				throw new EmployeeNotFoundException("Employee not found with id "+id);
+			}
+			PreparedStatement preparedStatement=connection.prepareStatement("delete from employee where employee_id=?");
+			preparedStatement.setInt(1, id);
+			preparedStatement.executeUpdate();
+			System.out.println("Deleted sucessfull!");
+			
+			return list1;
+	}
+	
 }

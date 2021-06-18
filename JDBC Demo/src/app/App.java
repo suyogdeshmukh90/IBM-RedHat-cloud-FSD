@@ -13,6 +13,7 @@ import java.util.InputMismatchException;
 import java.util.Iterator;
 
 import com.demo.Employee;
+import com.example.dao.EmployeeNotFoundException;
 import com.file.DatabaseToFile;
 import com.file.FileToDatabase;
 
@@ -21,7 +22,7 @@ import service.EmployeeServiceImpl;
 
 public class App {
 
-	public static void main(String[] args) throws SQLException, NumberFormatException, IOException {
+	public static void main(String[] args) throws SQLException, NumberFormatException, IOException, EmployeeNotFoundException {
 		FileToDatabase fd=new FileToDatabase();
 		DatabaseToFile dtf=new DatabaseToFile();
 		EmployeeService service=new EmployeeServiceImpl();
@@ -34,6 +35,8 @@ public class App {
 		System.out.println("3.Find employee in database ");
 		System.out.println("4.Create Employee from File");
 		System.out.println("5.Enter Data of Employee to File from Database");
+		System.out.println("6.Update the Data of Employee");
+		System.out.println("7.Delete the Data of Employee");
 		System.out.println("0. Exit");
 		System.out.println("Select your choice...");
 		choice=Integer.parseInt(bufferedReader.readLine());
@@ -42,10 +45,13 @@ public class App {
 		case 1:
 			System.out.println("Enter the first name");
 			String fname=bufferedReader.readLine();
+			fname=fname.toUpperCase();
 			System.out.println("Enter the last name");
 			String lname=bufferedReader.readLine();
+			lname=lname.toUpperCase();
 			System.out.println("Enter the email id");
 			String email=bufferedReader.readLine();
+			email=email.toLowerCase();
 			emp=service.createEmployee(new Employee(new Random().nextInt(100),fname,lname,email));
 			System.out.println(emp);
 			break;
@@ -101,6 +107,27 @@ public class App {
 			System.out.println("create a new file name or Enter the existing file name for saving details");
 			String filename=bufferedReader.readLine();
 			dtf.toFile(filename);
+			break;
+		case 6:
+			try {
+			System.out.println("Enter the id to update");
+			int id=Integer.parseInt(bufferedReader.readLine());
+			Employee employee2=service.updateEmployee(id);
+			System.out.println("Updated Employee:\n"+employee2);
+			}
+			catch(EmployeeNotFoundException e)
+			{
+				System.err.println("Employee not Found at id");
+			}
+			break;
+		case 7:
+			System.out.println("Enter the id to delete");
+			int id=Integer.parseInt(bufferedReader.readLine());
+			List<Employee> employee2=service.deleteEmployee(id);
+			System.out.println("Deleted Below Employee from database!");
+			System.out.println(employee2);
+			break;
+			
 		case 0:
 			System.out.println("Exiting...Bye!!!");
 			System.exit(0);
