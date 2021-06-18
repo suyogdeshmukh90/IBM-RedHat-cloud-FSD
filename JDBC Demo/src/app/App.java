@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Iterator;
 
 import com.demo.Employee;
@@ -54,11 +55,14 @@ public class App {
 			System.out.println("Enter the id to find");
 			int searchId=Integer.parseInt(bufferedReader.readLine());
 			ResultSet employee=service.searchEmployee(searchId);
+			List<Employee> list1=new ArrayList<Employee>();
 			int flag=0;
 			while(employee.next())
 			{
 				flag=1;
 				System.out.println("employee found");
+				list1.add(new Employee(employee.getInt(1),employee.getString(2),employee.getString(3),employee.getString(4)));
+				System.out.println(list1);
 				
 			}
 			
