@@ -13,7 +13,7 @@ import java.util.InputMismatchException;
 import java.util.Iterator;
 
 import com.demo.Employee;
-
+import com.file.DatabaseToFile;
 import com.file.FileToDatabase;
 
 import service.EmployeeService;
@@ -23,7 +23,7 @@ public class App {
 
 	public static void main(String[] args) throws SQLException, NumberFormatException, IOException {
 		FileToDatabase fd=new FileToDatabase();
-		
+		DatabaseToFile dtf=new DatabaseToFile();
 		EmployeeService service=new EmployeeServiceImpl();
 		Employee emp;
 		BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(System.in));
@@ -33,6 +33,7 @@ public class App {
 		System.out.println("2.Display all employees from database");
 		System.out.println("3.Find employee in database ");
 		System.out.println("4.Create Employee from File");
+		System.out.println("5.Enter Data of Employee to File from Database");
 		System.out.println("0. Exit");
 		System.out.println("Select your choice...");
 		choice=Integer.parseInt(bufferedReader.readLine());
@@ -75,10 +76,7 @@ public class App {
 				System.out.println("Employee not found!");
 						
 			break;
-		case 0:
-			System.out.println("Exiting...Bye!!!");
-			System.exit(0);
-			break;
+		
 			
 		case 4:
 			try {
@@ -97,10 +95,17 @@ public class App {
 			{
 				System.err.println("File not available. Please try again");
 			}
-			
-			
-			
+	
 			break;
+		case 5:
+			System.out.println("create a new file name or Enter the existing file name for saving details");
+			String filename=bufferedReader.readLine();
+			dtf.toFile(filename);
+		case 0:
+			System.out.println("Exiting...Bye!!!");
+			System.exit(0);
+			break;
+			
 		default:
 			System.out.println("Enter valid details...");
 			break;
