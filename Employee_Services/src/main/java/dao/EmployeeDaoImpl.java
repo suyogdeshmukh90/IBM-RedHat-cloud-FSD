@@ -57,7 +57,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		emp.setEmail(new_email);
 		emp.setEmployeeId(id);
 		session.getTransaction().begin();
-		session.save(emp);
+		session.merge(emp);
 		session.getTransaction().commit();
 		return emp;
 		
@@ -68,7 +68,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 		session=sessionFactory.openSession();
 		Employee emp=session.get(Employee.class, id);
 		session.getTransaction().begin();
-		session.delete(emp);
+		session.remove(emp);
 		session.getTransaction().commit();
 		System.out.println("Employee Deleted Successfully!");
 		return emp;
