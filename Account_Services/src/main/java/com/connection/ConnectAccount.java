@@ -15,11 +15,9 @@ public class ConnectAccount {
 	}
 	public  ConnectAccount createConnection() throws SQLException
 	{
-		if(connectAcc==null)
-			
-		{
+		if(connectAcc==null)	
 			connectAcc=new ConnectAccount();
-		}
+		
 		return connectAcc;
 	}
 	public Connection getMyConnection()

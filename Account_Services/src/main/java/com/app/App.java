@@ -20,8 +20,8 @@ public class App {
 	private static Scanner sc=new Scanner(System.in);
 	public static void main(String[] args) throws SQLException, AmountNotValidException {
 		Services service=new ServicesImpl();
-		AccountDao accountDao=new AccountDaoImpl();
-		Address add = null;
+//		AccountDao accountDao=new AccountDaoImpl();
+		Address add ;
 		
 		int choice;
 		
@@ -107,7 +107,7 @@ public class App {
 				System.out.println("enter valid choice");
 			}
 
-			Account account=accountDao.createAccount (new Account(UUID.randomUUID().toString(),accType.valueOf(aType),name,
+			Account account=service.createAccount (new Account(UUID.randomUUID().toString(),accType.valueOf(aType),name,
 							new Address(addline1, addline2,City.valueOf(city)), 1000)); 
 			System.out.println(account);
 			break;
@@ -115,7 +115,7 @@ public class App {
 		
 			
 		case 2:
-			List<AccountDTO> list=accountDao.getAllAccount();
+			List<AccountDTO> list=service.getAllAccount();
 	    	for(AccountDTO dto:list)
 	    	{
 	    		System.out.println(dto);
@@ -124,13 +124,13 @@ public class App {
 		case 3:
 			System.out.println("Enter the amount you want deposit");
 			double amount=sc.nextDouble();
-			accountDao.deposit(amount);
+			service.deposit(amount);
 			
 			break;
 		case 4:
 			System.out.println("Enter the amount you want to withdraw");
 			amount=sc.nextDouble();
-			double balance=accountDao.withdraw(amount);
+			double balance=service.withdraw(amount);
 			System.out.println("Balance Available");
 			break;
 		}
