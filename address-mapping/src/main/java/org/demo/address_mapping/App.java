@@ -26,7 +26,7 @@ public class App
     	try {
     		SessionFactory factory=new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Users.class).addAnnotatedClass(Address.class).buildSessionFactory();
     		Session session=factory.getCurrentSession();
-    		
+    		Course course=new Course();
     		Users user=new Users();
     		Address address=new Address();
     		user.setUsename("David Dhavan");

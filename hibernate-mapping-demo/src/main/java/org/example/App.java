@@ -13,6 +13,7 @@ import org.hibernate.cfg.Configuration;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
+import model.Course;
 import model.Instructor;
 import model.InstructorDetails;
 
@@ -28,7 +29,7 @@ public class App
     	Logger logger=Logger.getLogger("org.example.App.class");
        try {
     	   
-    	   SessionFactory sessionFactory= new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Instructor.class).addAnnotatedClass(InstructorDetails.class).buildSessionFactory();
+    	   SessionFactory sessionFactory= new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Instructor.class).addAnnotatedClass(InstructorDetails.class).addAnnotatedClass(Course.class).buildSessionFactory();
     	   Session session=sessionFactory.getCurrentSession();
     	   
     	   Instructor instructor=new Instructor();
@@ -39,6 +40,15 @@ public class App
     	   
     	   details.setYoutubeChannel("my-channel-2");
     	   details.setHobby("Cricket");
+    	   
+    	   Course course1=new Course();
+    	   course1.setCourseName("Python");
+    	   instructor.add(course1);
+    	   
+    	   Course course2=new Course();
+    	   course2.setCourseName("Angular");
+    	   instructor.add(course2);
+    	   
     	   instructor.setInstructorDetails(details);
     	   details.setInstructor(instructor);
     	   session.getTransaction().begin();

@@ -1,5 +1,8 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
@@ -8,6 +11,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -39,6 +43,21 @@ public class Instructor {
 	})
 	@JoinColumn(name="instruction_details_id")
 	private InstructorDetails instructorDetails;
+	@OneToMany(cascade = {
+			CascadeType.DETACH,
+			CascadeType.MERGE,
+			CascadeType.PERSIST,CascadeType.REFRESH
+	})
 	
-
+	private List<Course> course;
+	public void add(Course tempCourse)
+	{
+		if(course==null)
+		{
+			course=new ArrayList<Course>();
+			
+		}
+		course.add(tempCourse);
+		tempCourse.setInstructor(this);
+	}
 }
