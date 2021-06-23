@@ -16,6 +16,8 @@ import java.util.logging.Logger;
 import model.Course;
 import model.Instructor;
 import model.InstructorDetails;
+import model.Student;
+import model.University;
 
 /**
  * Hello world!
@@ -29,10 +31,10 @@ public class App
     	Logger logger=Logger.getLogger("org.example.App.class");
        try {
     	   
-    	   SessionFactory sessionFactory= new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Instructor.class).addAnnotatedClass(InstructorDetails.class).addAnnotatedClass(Course.class).buildSessionFactory();
+    	   SessionFactory sessionFactory= new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Student.class).addAnnotatedClass(University.class).buildSessionFactory();
     	   Session session=sessionFactory.getCurrentSession();
     	   
-    	   Instructor instructor=new Instructor();
+    	  /* Instructor instructor=new Instructor();
     	   InstructorDetails details=new InstructorDetails();
     	   instructor.setFirstName("ajinkya");
     	   instructor.setLastName("rahane");
@@ -54,6 +56,29 @@ public class App
     	   session.getTransaction().begin();
     	   session.persist(instructor);
     	   session.getTransaction().commit();
+    	   */
+    	   
+    	   
+    	   Student student=new Student();
+    	   University university=new University();
+    	   student.setFirstName("Rahul");
+    	   student.setLastName("Dravid");
+    	   student.setSection("Science");
+    	   university.add(student);
+    	   
+    	   Student student1=new Student();
+    	   student1.setFirstName("chetan");
+    	   student1.setLastName("sharma");
+    	   student1.setSection("commerce");
+    	   university.add(student1);
+    	   university.setUniversityName("SPPU");
+    	   university.setCountry("India");
+    	   student.setUniversityDetails(university);
+    	   session.getTransaction().begin();
+    	   session.persist(university);
+    	   session.getTransaction().commit();
+    	   
+    	   
     	   logger.info("Done!");
 //    
     	   //For Display
