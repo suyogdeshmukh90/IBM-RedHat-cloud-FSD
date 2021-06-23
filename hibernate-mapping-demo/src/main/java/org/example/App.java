@@ -16,6 +16,8 @@ import java.util.logging.Logger;
 import model.Course;
 import model.Instructor;
 import model.InstructorDetails;
+import model.People;
+import model.Review;
 import model.Student;
 import model.University;
 
@@ -31,10 +33,10 @@ public class App
     	Logger logger=Logger.getLogger("org.example.App.class");
        try {
     	   
-    	   SessionFactory sessionFactory= new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Student.class).addAnnotatedClass(University.class).buildSessionFactory();
+    	   SessionFactory sessionFactory= new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Instructor.class).addAnnotatedClass(InstructorDetails.class).addAnnotatedClass(Course.class).addAnnotatedClass(Review.class).addAnnotatedClass(People.class).buildSessionFactory();
     	   Session session=sessionFactory.getCurrentSession();
     	   
-    	  /* Instructor instructor=new Instructor();
+    	   Instructor instructor=new Instructor();
     	   InstructorDetails details=new InstructorDetails();
     	   instructor.setFirstName("ajinkya");
     	   instructor.setLastName("rahane");
@@ -53,13 +55,29 @@ public class App
     	   
     	   instructor.setInstructorDetails(details);
     	   details.setInstructor(instructor);
+    	   
+    	   Review review=new Review();
+    	   review.setComment("helpful");
+    	   Course course=new Course();
+    	   course.addReview(review);
+    	   
+    	   People people1=new People();
+    	   people1.setFirstname("manyata");
+    	   people1.setLastname("Kumar");
+    	   people1.setEmail("manyata@email.com");
+    	   
+    	   List<Course> list=new ArrayList<Course>();
+    	   list.add(course1);
+    	   list.add(course2);
+    	   people1.setCourses(list);
     	   session.getTransaction().begin();
     	   session.persist(instructor);
+    	   
+    	   session.persist(people1);
     	   session.getTransaction().commit();
-    	   */
+    	   logger.info("Done!");
     	   
-    	   
-    	   Student student=new Student();
+    	  /*Student student=new Student();
     	   University university=new University();
     	   student.setFirstName("Rahul");
     	   student.setLastName("Dravid");
@@ -78,8 +96,8 @@ public class App
     	   session.persist(university);
     	   session.getTransaction().commit();
     	   
-    	   
-    	   logger.info("Done!");
+    	   */
+    	  
 //    
     	   //For Display
 //    	   session=sessionFactory.openSession();
