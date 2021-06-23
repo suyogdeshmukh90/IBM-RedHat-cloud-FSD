@@ -1,7 +1,13 @@
 package model;
 
+import java.util.Set;
+
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -28,5 +34,4 @@ public class Employee {
 	private String last_name;
 	private String email;
 	
-
 }

@@ -5,23 +5,28 @@ import java.io.InputStreamReader;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Logger;
+
+import org.apache.log4j.PropertyConfigurator;
 
 import model.Employee;
 import service.EmployeeServices;
 import service.EmployeeServicesImpl;
 
-/**
- * Hello world!
- *
- */
+
 public class App 
 {
+	private static Logger logger=Logger.getLogger("org.demo.Employee_Services.App.class");
     public static void main( String[] args )
     {
+    	PropertyConfigurator.configure("log4j.properties");
+    	logger.info("service layer initiating");
     	 EmployeeServices service=new EmployeeServicesImpl();
+    	 logger.info("service layer initiated");
      	BufferedReader bufferedReader=new BufferedReader(new InputStreamReader(System.in));
          String firstName,lastName,email=null;
      	int choice=0;
+     	logger.info("going to do while loop.");
      	do {
      		try {
          		System.out.println("1. Create Employee.");
@@ -58,7 +63,7 @@ public class App
      				employee=service.getEmployeeById(id);
      				if(employee==null)
      				{
-     					System.out.println("No Such employee found. ");
+     					logger.info("Employee not found");
      				}
      				else
      				{
@@ -67,6 +72,7 @@ public class App
      				
      				break;
      			case 4:
+     				System.out.println("update starting");
      				System.out.print("Enter the id to update: ");
      				int uid=Integer.parseInt(bufferedReader.readLine());
      				employee=service.updateEmployee(uid);
@@ -78,7 +84,7 @@ public class App
      				{
      					System.out.println("employee updated: "+employee);
      				}
-     				
+     				logger.info("Employee updated");
      				break;
      			case 5:
      				System.out.print("Enter the id to delete: ");
@@ -87,10 +93,12 @@ public class App
      				if(employee==null)
      				{
      					System.out.println("No Such employee found. ");
+     					logger.info("Employee not found");
      				}
      				else
      				{
      					System.out.println("employee deleted: "+employee);
+     					logger.info("Employee deleted");
      				}
      				
      				break;
