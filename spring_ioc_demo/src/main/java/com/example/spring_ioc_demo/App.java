@@ -8,6 +8,7 @@ import com.example.model.Employee;
 import com.example.model.ManagerEmp;
 
 import model2.MyInterface;
+import model3.Customer;
 
 /**
  * Hello world!
@@ -30,8 +31,13 @@ public class App
     		System.out.println(emp.getDetails());
     		*/
     		
-    		MyInterface cd=context.getBean("theCD", MyInterface.class);
+    		/*MyInterface cd=context.getBean("theCD", MyInterface.class);
     		System.out.println(cd.getDetails());
+    		MyInterface cd1=context.getBean("theCD1", MyInterface.class);
+    		System.out.println(cd1.getDetails());*/
+    		
+    		Customer cus=context.getBean("theCustomer",Customer.class);
+    		System.out.println(cus.toString());
     	}catch(Exception e)
     	{
     		e.printStackTrace();

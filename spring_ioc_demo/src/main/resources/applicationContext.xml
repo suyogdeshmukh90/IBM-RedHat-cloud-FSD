@@ -8,9 +8,35 @@
 <constructor-arg index="2" value="Smith"/>
 <constructor-arg index="3" value="david@email"/>
 </bean> -->
-<bean name="theCD" class="model2.InternationalCD">
+
+<!-- <bean name="theCD" class="model2.InternationalCD">
 <constructor-arg index="0" value="4"/>
 <constructor-arg index="1" value="dave"/>
 <constructor-arg index="2" value="Computer"/>
+</bean>
+<bean name="theCD1" class="model2.SpecialCD">
+<constructor-arg index="0" value="11"/>
+<constructor-arg index="1" value="smith"/>
+<constructor-arg index="2" value="player"/>
+</bean> -->
+
+<bean name="theCustomer" class="model3.Customer">
+	<constructor-arg name="id" value="01"/>
+	<constructor-arg name="name" value="Will"/>
+	<constructor-arg name="address" ref="theAddress"/>
+	<constructor-arg name="branch" ref="theBranch"/>
+</bean>
+
+<bean name="theAddress" class="model3.Address">
+<constructor-arg name="addressline1" value="1A"/>
+<constructor-arg name="addressline2" value="Avenue"/>
+<constructor-arg name="city" value="Pune"/>
+<constructor-arg name="zipcode" value="411027"/>
+</bean>
+
+<bean name="theBranch" class="model3.Branch">
+<constructor-arg name="branchId" value ="101"/>
+<constructor-arg name="branchName" value="IT"/>
+<constructor-arg name="branchAddress" value="Pune"/>
 </bean>
 </beans>
