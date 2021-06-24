@@ -5,6 +5,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.example.model.Coach;
 import com.example.model.Employee;
+import com.example.model.ManagerEmp;
+
+import model2.MyInterface;
 
 /**
  * Hello world!
@@ -16,12 +19,19 @@ public class App
     {
     	try {
     		ApplicationContext context=new ClassPathXmlApplicationContext("applicationContext.xml");
-//    		Coach theCoach=context.getBean("theCoach",Coach.class);
-//    		System.out.println(theCoach.getDailyWorkout());
+    		/*Coach theCoach=context.getBean("theCoach",Coach.class);
+    		System.out.println(theCoach.getDailyWorkout());
     		
-    		Employee emp=context.getBean("employee", Employee.class);
+    		ManagerEmp emp=context.getBean("employee", ManagerEmp.class);
     		
-    		System.out.println(emp);
+    		
+    		emp.setFirstName("john");
+    		emp.setLastName("miller");
+    		System.out.println(emp.getDetails());
+    		*/
+    		
+    		MyInterface cd=context.getBean("theCD", MyInterface.class);
+    		System.out.println(cd.getDetails());
     	}catch(Exception e)
     	{
     		e.printStackTrace();

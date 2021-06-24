@@ -2,6 +2,15 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-<bean name="employee" class="com.example.model.Employee" />
-
+<!-- <bean name="employee" class="com.example.model.ManagerEmp" >
+<constructor-arg index="0" value="101"/>
+<constructor-arg index="1" value="David"/>
+<constructor-arg index="2" value="Smith"/>
+<constructor-arg index="3" value="david@email"/>
+</bean> -->
+<bean name="theCD" class="model2.InternationalCD">
+<constructor-arg index="0" value="4"/>
+<constructor-arg index="1" value="dave"/>
+<constructor-arg index="2" value="Computer"/>
+</bean>
 </beans>
