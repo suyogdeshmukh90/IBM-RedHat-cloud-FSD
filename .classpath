@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="src" path="15-05-21/src"/>
+	<classpathentry kind="src" path="16-06-21/src"/>
+	<classpathentry kind="src" path="9_6_21/src"/>
+	<classpathentry kind="src" path="abstract demo/src"/>
+	<classpathentry kind="src" path="Account Manipulation/src"/>
+	<classpathentry kind="src" path="Account_Services/src/main/java"/>
+	<classpathentry kind="src" path="Account_Services/src/test/java"/>
+	<classpathentry kind="src" path="address-mapping/src/main/java"/>
+	<classpathentry kind="src" path="address-mapping/src/test/java"/>
+	<classpathentry kind="src" path="Array Example/src"/>
+	<classpathentry kind="src" path="Array project/src"/>
+	<classpathentry kind="src" path="BookApp/src"/>
+	<classpathentry kind="src" path="Collection/src"/>
+	<classpathentry kind="src" path="commandLine Arg File/src"/>
+	<classpathentry kind="src" path="comparator/src"/>
+	<classpathentry kind="src" path="comparison demo/src"/>
+	<classpathentry kind="src" path="Display State/src"/>
+	<classpathentry kind="src" path="Employee List/src"/>
+	<classpathentry kind="src" path="Employee_Services/src/main/java"/>
+	<classpathentry kind="src" path="Employee_Services/src/test/java"/>
+	<classpathentry kind="src" path="EmployeeService/src/main/java"/>
+	<classpathentry kind="src" path="EmployeeService/src/test/java"/>
+	<classpathentry kind="src" path="Exception Handling Demo/src"/>
+	<classpathentry kind="src" path="File to Collection/src"/>
+	<classpathentry kind="src" path="hibernate-mapping-demo/src/main/java"/>
+	<classpathentry kind="src" path="hibernate-mapping-demo/src/test/java"/>
+	<classpathentry kind="src" path="inheritance/src"/>
+	<classpathentry kind="src" path="JDBC Demo/src"/>
+	<classpathentry kind="src" path="Password Validation/src"/>
+	<classpathentry kind="src" path="project - employeedata/src"/>
+	<classpathentry kind="src" path="project-3/src"/>
+	<classpathentry kind="src" path="project-4a/src"/>
+	<classpathentry kind="src" path="project-one/src"/>
+	<classpathentry kind="src" path="project-two/src"/>
+	<classpathentry kind="src" path="queueExample/src"/>
+	<classpathentry kind="src" path="serializable/src"/>
+	<classpathentry kind="src" path="SNMR Student Details/src"/>
+	<classpathentry kind="src" path="spring-jdbc-template/src/main/java"/>
+	<classpathentry kind="src" path="spring-jdbc-template/src/test/java"/>
+	<classpathentry kind="src" path="static demo/src"/>
+	<classpathentry kind="src" path="Student Grade Calculator/src"/>
+	<classpathentry kind="src" path="Student Serializable/src"/>
+	<classpathentry kind="src" path="Threading/src"/>
+	<classpathentry kind="output" path="15-05-21/bin"/>
+</classpath>
