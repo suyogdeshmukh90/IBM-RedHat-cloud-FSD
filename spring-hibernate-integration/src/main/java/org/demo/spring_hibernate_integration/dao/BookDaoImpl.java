@@ -56,7 +56,7 @@ public class BookDaoImpl implements BookDao {
 	@Transactional
 	public Book updateBook(int id) throws IOException {
 		Session session=sessionFactory.getCurrentSession();
-		Book book=new Book();
+		Book book=session.get(Book.class, id);
 		System.out.println("Enter the new name");
 		String nname=bufferedReader.readLine();
 		System.out.println("Enter the new price");
