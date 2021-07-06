@@ -123,16 +123,27 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	}
 
 	@Override
-	
+	@Transactional
 	public void deleteEmployee(String employeeId) {
 		Session session=sessionFactory.openSession();
+		@SuppressWarnings("deprecation")
 		Query query=session.createQuery("select B from Employee B where employeeId=:empId").setString("empId",employeeId);
 		@SuppressWarnings("unchecked")
 		List<Employee> list=query.getResultList();
+		if(list.isEmpty())
+		{
+			System.out.println("Employee not Found!");
+		}
+		else {
+			Employee employee=list.get(0);
+			query=session.createQuery("delete from Employee where emloyeeId=:empId").setString("empId", employeeId);
+			session.remove(employee);
+			System.out.println("Successfully Deleted book");
+		}
 		
-		Employee employee=list.get(0);
-		session.remove(employee);
-		System.out.println("Successfully Deleted book");
+		
+		
+		
 	}
 
 }
