@@ -14,4 +14,13 @@ public interface BookService {
 	
 	public Book updateBook(Integer id,Book book) throws BookNotFoundException;
 
+	public Book findBookByBookId(String bookid) throws BookNotFoundException;
+	
+	public Book findBookByBookName(String bname) throws BookNotFoundException;
+	
+	public Book updateBookByBookId(String bookid,Book book) throws BookNotFoundException;
+	
+	public String deleteByBookId(String bookId)  throws BookNotFoundException;
+
+
 }

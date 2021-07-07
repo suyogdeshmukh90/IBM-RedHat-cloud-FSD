@@ -5,10 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,26 +19,31 @@ import com.example.demo.model.Book;
 import com.example.demo.service.BookService;
 import com.example.demo.ui.BookErrorResponse;
 
+import lombok.extern.slf4j.Slf4j;
+
 @RestController
+@Slf4j
 public class BookController {
 	
-	BookService bookServiceImpl;
+	BookService bookService;
 	@Autowired
 	public BookController(BookService bookServiceImpl) {
 		
-		this.bookServiceImpl = bookServiceImpl;
+		this.bookService = bookServiceImpl;
 	}
 	
 	@GetMapping("/api/books")
 	public ResponseEntity<List<Book>> getAllBooks()
 	{
-		return ResponseEntity.status(HttpStatus.OK).body(bookServiceImpl.getAllBooks());
+		log.info("within get all method");
+		return ResponseEntity.status(HttpStatus.OK).body(bookService.getAllBooks());
 	}
 
 	@PostMapping("/api/books")
 	public ResponseEntity<Book> createBook(@RequestBody Book book)
 	{
-		return ResponseEntity.status(HttpStatus.CREATED).body(bookServiceImpl.createBook(book));
+		log.info("within create method");
+		return ResponseEntity.status(HttpStatus.CREATED).body(bookService.createBook(book));
 	}
 	
 	@ExceptionHandler
@@ -59,13 +66,38 @@ public class BookController {
 	@GetMapping("/api/books/{id}")
 	public ResponseEntity<Book> findBookById(@PathVariable("id") Integer id) throws BookNotFoundException
 	{
-		return ResponseEntity.status(HttpStatus.OK).body(bookServiceImpl.findBookById(id));
+		log.info("within find By Id");
+		return ResponseEntity.status(HttpStatus.OK).body(bookService.findBookById(id));
 	}
 	
-	@PostMapping("/api/books/{id}")
-	public ResponseEntity<Book> updateBook(@PathVariable("id") Integer id ,@RequestBody Book book) throws BookNotFoundException
+	@GetMapping("/api/books/find/{bookid}")
+	public ResponseEntity<Book> findBookById(@PathVariable("bookid") String bookid) throws BookNotFoundException
 	{
-		return ResponseEntity.status(HttpStatus.CREATED).body(bookServiceImpl.updateBook(id,book));
+		log.info("within find By bookId");
+		return ResponseEntity.status(HttpStatus.CREATED).body(bookService.findBookByBookId(bookid));
+	}
+	@GetMapping("/api/books/findByName/{bookName}")
+	public ResponseEntity<Book> findBookByBookName(@PathVariable("bookName") String bookName) throws BookNotFoundException
+	{
+		log.info("within find By book Name");
+		return ResponseEntity.status(HttpStatus.CREATED).body(bookService.findBookByBookName(bookName));
+	}
+	@PutMapping("/api/books/find/{bookId}")
+	public ResponseEntity<Book> updateBookByBookId(@PathVariable("bookId") String bookId,@RequestBody Book book) throws BookNotFoundException
+	{
+		log.info("within find By Update Book by Bookid");
+		return ResponseEntity.status(HttpStatus.OK).body(bookService.updateBookByBookId(bookId, book));
+	}
+	@PutMapping("/api/books/{Id}")
+	public ResponseEntity<Book> updateBook(@PathVariable("Id") Integer Id,@RequestBody Book book) throws BookNotFoundException
+	{
+		log.info("within find By Update Book by id");
+		return ResponseEntity.status(HttpStatus.OK).body(bookService.updateBook(Id, book));
 	}
 	
+	@DeleteMapping("/api/books/{bookId}")
+	public ResponseEntity<String> deleteByBookId(@PathVariable("bookId") String bookId) throws BookNotFoundException
+	{
+		return ResponseEntity.ok(bookService.deleteByBookId(bookId));
+	}
 }

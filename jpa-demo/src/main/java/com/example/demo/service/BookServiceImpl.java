@@ -41,4 +41,28 @@ public class BookServiceImpl implements BookService{
 		return bookDaoImpl.updateBook(id, book);
 	}
 
+	@Override
+	public Book findBookByBookId(String bookid) throws BookNotFoundException {
+		
+		return bookDaoImpl.findBookByBookId(bookid);
+	}
+
+	@Override
+	public Book findBookByBookName(String bname) throws BookNotFoundException {
+		
+		return bookDaoImpl.findBookByBookName(bname);
+	}
+
+	@Override
+	public Book updateBookByBookId(String bookid, Book book) throws BookNotFoundException {
+		
+		return bookDaoImpl.updateBookByBookId(bookid, book);
+	}
+
+	@Override
+	public String deleteByBookId(String bookId)  throws BookNotFoundException{
+		
+		return bookDaoImpl.deleteByBookId(bookId);
+	}
+
 }
