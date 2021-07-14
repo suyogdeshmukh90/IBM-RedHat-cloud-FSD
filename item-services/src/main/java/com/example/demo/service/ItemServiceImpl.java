@@ -94,6 +94,7 @@ public class ItemServiceImpl implements ItemService{
 		item.setItemName(itemDto.getItemName());
 		item.setItemPrice(itemDto.getItemPrice());
 		item.setIsAvailable(itemDto.getIsAvailable());
+		itemDao.save(item);
 		return modelMapper.map(item, ItemResponseModel.class);
 	}
 

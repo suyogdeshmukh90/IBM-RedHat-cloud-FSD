@@ -9,6 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 import com.example.demo.dao.ItemDao;
 import com.example.demo.model.Item;
@@ -32,7 +33,11 @@ public class ItemServicesApplication implements CommandLineRunner{
 	{
 		return new ModelMapper();
 	}
-
+	
+	@Bean
+	public RestTemplate restTemplate() {
+		return new RestTemplate();
+	}
 	@Override
 	public void run(String... args) throws Exception {
 		itemDao.save(new Item(UUID.randomUUID().toString(),"Item-1", 100.0, true));
