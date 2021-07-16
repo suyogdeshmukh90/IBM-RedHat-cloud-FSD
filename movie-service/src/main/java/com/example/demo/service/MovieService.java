@@ -7,4 +7,5 @@ import com.example.demo.model.MovieEntity;
 public interface MovieService {
 	public MovieEntity createMovie(MovieEntity movie);
 	public List<MovieEntity> getAllMovies();
+	public MovieEntity findByMovieName(String movieName);
 }

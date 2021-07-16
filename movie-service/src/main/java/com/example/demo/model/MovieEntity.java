@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
@@ -16,12 +18,19 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Entity
 @Data
-@Table(name="movie")
+@Table(name="movies")
 public class MovieEntity {
 	@Id
-	private String id;
-	@Column(name="movie_name")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Integer id;
+	@Column(name="movie_name", unique=true)
 	private String movieName;
+	
 	@Column(name="genre")
-	private String genre;
+	private Genre genre;
+	
+	@JsonProperty
+	@Column(name="is_available")
+	private Boolean isAvailable;
+	
 }

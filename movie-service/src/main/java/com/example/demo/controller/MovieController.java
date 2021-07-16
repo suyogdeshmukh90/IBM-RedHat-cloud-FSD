@@ -4,9 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -28,21 +28,26 @@ public class MovieController {
 	}
 
 	@GetMapping
-	public ResponseEntity<String> getStatus()
+	public String getStatus()
 	{
-		return ResponseEntity.ok("app running and up on port"+environment.getProperty("local.server.port"));
+		return "app running and up on port"+environment.getProperty("local.server.port");
 	}
 	
 	@PostMapping("/movies")
-	public ResponseEntity<MovieEntity> createMovie(@RequestBody MovieEntity movieEntity)
+	public MovieEntity createMovie(@RequestBody MovieEntity movieEntity)
 	{
-		return new ResponseEntity<MovieEntity>(movieService.createMovie(movieEntity),HttpStatus.CREATED);
+		return movieService.createMovie(movieEntity);
 	}
 	
 	@GetMapping("/movies")
-	public ResponseEntity<List<MovieEntity>> getAllMovies()
+	public List<MovieEntity> getAllMovies()
 	{
-		return ResponseEntity.ok(movieService.getAllMovies());
+		return movieService.getAllMovies();
+	}
+	@GetMapping("/movies/{movieName}")
+	public MovieEntity getMovieByName(@PathVariable("movieName") String movieName)
+	{
+		return movieService.findByMovieName(movieName);
 	}
 
 }

@@ -30,4 +30,10 @@ public class MovieServiceImpl implements MovieService{
 		return movieRepo.findAll();
 	}
 
+	@Override
+	public MovieEntity findByMovieName(String movieName) {
+		
+		return movieRepo.findByMovieName(movieName);
+	}
+
 }
