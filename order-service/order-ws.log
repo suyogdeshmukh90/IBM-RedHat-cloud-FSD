@@ -1,0 +1,163 @@
+2021-07-15 11:21:41.877  INFO [order-service,,] 8644 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-07-15 11:21:43.848  INFO [order-service,,] 8644 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Fetching config from server at : http://localhost:8888
+2021-07-15 11:21:45.491  INFO [order-service,,] 8644 --- [restartedMain] c.c.c.ConfigServicePropertySourceLocator : Located environment: name=order-service, profiles=[default], label=null, version=a2955faae087efcf9f054097974b470c67bad4bf, state=null
+2021-07-15 11:21:45.496  INFO [order-service,,] 8644 --- [restartedMain] b.c.PropertySourceBootstrapConfiguration : Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/suyogdeshmukh90/config-server-repo.git/file:C:\Users\001ZT1~1\AppData\Local\Temp\config-repo-17319143200347838194\application.yml'}]
+2021-07-15 11:21:45.538  INFO [order-service,,] 8644 --- [restartedMain] c.example.demo.OrderServiceApplication   : No active profile set, falling back to default profiles: default
+2021-07-15 11:21:49.605  INFO [order-service,,] 8644 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-07-15 11:21:50.376  INFO [order-service,,] 8644 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 748 ms. Found 1 MongoDB repository interfaces.
+2021-07-15 11:21:52.049  INFO [order-service,,] 8644 --- [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=80f8773c-74a6-37b1-8b25-b78076ac7354
+2021-07-15 11:21:55.958  INFO [order-service,,] 8644 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 0 (http)
+2021-07-15 11:21:56.005  INFO [order-service,,] 8644 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-07-15 11:21:56.006  INFO [order-service,,] 8644 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.48]
+2021-07-15 11:21:56.488  INFO [order-service,,] 8644 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-07-15 11:21:56.489  INFO [order-service,,] 8644 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 10907 ms
+2021-07-15 11:21:59.572  WARN [order-service,,] 8644 --- [restartedMain] o.s.c.s.a.z.ZipkinAutoConfiguration      : Check result of the [RestTemplateSender{http://localhost:9411/api/v2/spans}] contains an error [CheckResult{ok=false, error=org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Connect timed out; nested exception is java.net.SocketTimeoutException: Connect timed out}]
+2021-07-15 11:22:01.020  INFO [order-service,,] 8644 --- [restartedMain] org.mongodb.driver.cluster               : Cluster created with settings {hosts=[localhost:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-07-15 11:22:01.226  INFO [order-service,,] 8644 --- [cluster-rtt-ClusterId{value='60efcd003f5b2b2cdd3d23a1', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:2, serverValue:1}] to localhost:27017
+2021-07-15 11:22:01.227  INFO [order-service,,] 8644 --- [cluster-ClusterId{value='60efcd003f5b2b2cdd3d23a1', description='null'}-localhost:27017] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:1, serverValue:2}] to localhost:27017
+2021-07-15 11:22:01.228  INFO [order-service,,] 8644 --- [cluster-ClusterId{value='60efcd003f5b2b2cdd3d23a1', description='null'}-localhost:27017] org.mongodb.driver.cluster               : Monitor thread successfully connected to server with description ServerDescription{address=localhost:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=9, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=67047900}
+2021-07-15 11:22:01.480  WARN [order-service,,] 8644 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-07-15 11:22:01.895  WARN [order-service,,] 8644 --- [restartedMain] o.s.data.convert.CustomConversions       : Registering converter from class java.time.LocalDateTime to class org.joda.time.LocalDateTime as reading converter although it doesn't convert from a store-supported type! You might want to check your annotation setup at the converter implementation.
+2021-07-15 11:22:04.938  WARN [order-service,,] 8644 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2021-07-15 11:22:10.648  INFO [order-service,,] 8644 --- [restartedMain] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2021-07-15 11:22:11.162  WARN [order-service,,] 8644 --- [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2021-07-15 11:22:11.391  INFO [order-service,,] 8644 --- [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2021-07-15 11:22:11.869  INFO [order-service,,] 8644 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 59459 (http) with context path ''
+2021-07-15 11:22:11.871  INFO [order-service,,] 8644 --- [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 59459
+2021-07-15 11:22:11.880  INFO [order-service,,] 8644 --- [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2021-07-15 11:22:11.968  INFO [order-service,,] 8644 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2021-07-15 11:22:11.979  INFO [order-service,,] 8644 --- [restartedMain] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 11:22:12.035  INFO [order-service,,] 8644 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2021-07-15 11:22:12.036  INFO [order-service,,] 8644 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2021-07-15 11:22:12.036  INFO [order-service,,] 8644 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2021-07-15 11:22:12.036  INFO [order-service,,] 8644 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2021-07-15 11:22:12.036  INFO [order-service,,] 8644 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2021-07-15 11:22:12.037  INFO [order-service,,] 8644 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2021-07-15 11:22:12.037  INFO [order-service,,] 8644 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2021-07-15 11:22:12.443  INFO [order-service,,] 8644 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2021-07-15 11:22:12.455  INFO [order-service,,] 8644 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2021-07-15 11:22:12.468  INFO [order-service,,] 8644 --- [restartedMain] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2021-07-15 11:22:12.495  INFO [order-service,,] 8644 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1626328332493 with initial instances count: 1
+2021-07-15 11:22:12.515  INFO [order-service,,] 8644 --- [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ORDER-SERVICE with eureka with status UP
+2021-07-15 11:22:12.516  INFO [order-service,,] 8644 --- [restartedMain] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1626328332516, current=UP, previous=STARTING]
+2021-07-15 11:22:12.519  INFO [order-service,,] 8644 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/order-service:3f1481fa3973947228915238233b8a58: registering service...
+2021-07-15 11:22:12.802  INFO [order-service,,] 8644 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/order-service:3f1481fa3973947228915238233b8a58 - registration status: 204
+2021-07-15 11:22:12.836  INFO [order-service,,] 8644 --- [restartedMain] c.example.demo.OrderServiceApplication   : Started OrderServiceApplication in 33.88 seconds (JVM running for 37.345)
+2021-07-15 11:22:12.916  WARN [order-service,,] 8644 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=order-service, managementUrl=http://host.docker.internal:59459/actuator, healthUrl=http://host.docker.internal:59459/actuator/health, serviceUrl=http://host.docker.internal:59459/) at spring-boot-admin ([http://admin:admin@localhost:8888//instances]): 404 : [{"timestamp":"2021-07-15T05:52:12.888+00:00","status":404,"error":"Not Found","message":"No message available","path":"/instances"}]. Further attempts are logged on DEBUG level
+2021-07-15 11:27:12.055  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 11:29:50.048  INFO [order-service,,] 8644 --- [http-nio-auto-1-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-07-15 11:29:50.050  INFO [order-service,,] 8644 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-07-15 11:29:50.062  INFO [order-service,,] 8644 --- [http-nio-auto-1-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2021-07-15 11:29:53.509  WARN [order-service,,] 8644 --- [AsyncReporter{RestTemplateSender{http://localhost:9411/api/v2/spans}}] z.r.AsyncReporter$BoundedAsyncReporter   : Spans were dropped due to exceptions. All subsequent errors will be logged at FINE level.
+2021-07-15 11:29:53.534  WARN [order-service,,] 8644 --- [AsyncReporter{RestTemplateSender{http://localhost:9411/api/v2/spans}}] z.r.AsyncReporter$BoundedAsyncReporter   : Dropped 2 spans due to ResourceAccessException(I/O error on POST request for "http://localhost:9411/api/v2/spans": Read timed out; nested exception is java.net.SocketTimeoutException: Read timed out)
+
+org.springframework.web.client.ResourceAccessException: I/O error on POST request for "http://localhost:9411/api/v2/spans": Read timed out; nested exception is java.net.SocketTimeoutException: Read timed out
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:785) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.cloud.sleuth.zipkin2.ZipkinRestTemplateWrapper.doExecute(ZipkinRestTemplateWrapper.java:69) ~[spring-cloud-sleuth-zipkin-3.0.3.jar:3.0.3]
+	at org.springframework.web.client.RestTemplate.exchange(RestTemplate.java:660) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.cloud.sleuth.zipkin2.RestTemplateSender.post(RestTemplateSender.java:151) ~[spring-cloud-sleuth-zipkin-3.0.3.jar:3.0.3]
+	at org.springframework.cloud.sleuth.zipkin2.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:169) ~[spring-cloud-sleuth-zipkin-3.0.3.jar:3.0.3]
+	at org.springframework.cloud.sleuth.zipkin2.RestTemplateSender$HttpPostCall.doExecute(RestTemplateSender.java:159) ~[spring-cloud-sleuth-zipkin-3.0.3.jar:3.0.3]
+	at zipkin2.Call$Base.execute(Call.java:391) ~[zipkin-2.23.0.jar:na]
+	at zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:299) ~[zipkin-reporter-2.16.1.jar:na]
+	at zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:378) ~[zipkin-reporter-2.16.1.jar:na]
+	at java.base/java.lang.Thread.run(Thread.java:832) ~[na:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:283) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:981) ~[na:na]
+	at java.base/java.io.BufferedInputStream.fill(BufferedInputStream.java:244) ~[na:na]
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:284) ~[na:na]
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:343) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:754) ~[na:na]
+	at java.base/sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:689) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1623) ~[na:na]
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1528) ~[na:na]
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527) ~[na:na]
+	at org.springframework.http.client.SimpleClientHttpResponse.getRawStatusCode(SimpleClientHttpResponse.java:55) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.client.DefaultResponseErrorHandler.hasError(DefaultResponseErrorHandler.java:64) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:807) ~[spring-web-5.3.8.jar:5.3.8]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:777) ~[spring-web-5.3.8.jar:5.3.8]
+	... 9 common frames omitted
+
+2021-07-15 11:32:12.059  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 11:37:12.065  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 11:42:12.075  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 11:47:12.079  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 11:47:18.524  INFO [order-service,7b0db6f6684517ee,8cfad08ec1ef35d1] 8644 --- [http-nio-auto-1-exec-4] org.mongodb.driver.connection            : Opened connection [connectionId{localValue:3, serverValue:3}] to localhost:27017
+2021-07-15 11:52:12.082  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 11:57:12.090  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 12:02:12.108  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 12:07:12.116  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 12:12:12.129  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 12:17:12.132  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 12:22:12.135  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 12:27:12.142  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 12:32:12.152  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 12:37:12.161  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 12:42:12.174  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 12:47:12.177  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 12:52:12.190  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 12:57:12.190  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 13:02:12.203  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 13:07:12.209  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 13:12:12.217  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 13:17:12.232  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 13:22:12.241  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 13:27:12.250  INFO [order-service,,] 8644 --- [AsyncResolver-bootstrap-executor-0] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2021-07-15 13:58:10.925  INFO [order-service,,] 8644 --- [RMI TCP Connection(161)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2021-07-15 13:58:10.930  INFO [order-service,,] 8644 --- [RMI TCP Connection(161)-127.0.0.1] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ORDER-SERVICE with eureka with status DOWN
+2021-07-15 13:58:10.932  INFO [order-service,,] 8644 --- [RMI TCP Connection(161)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1626337690932, current=DOWN, previous=UP]
+2021-07-15 13:58:10.933  INFO [order-service,,] 8644 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/order-service:3f1481fa3973947228915238233b8a58: registering service...
+2021-07-15 13:58:10.966  INFO [order-service,,] 8644 --- [DiscoveryClient-InstanceInfoReplicator-0] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/order-service:3f1481fa3973947228915238233b8a58 - registration status: 204
+2021-07-15 13:58:11.015  INFO [order-service,,] 8644 --- [RMI TCP Connection(161)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2021-07-15 13:58:11.024  INFO [order-service,,] 8644 --- [RMI TCP Connection(161)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2021-07-15 13:58:11.046  WARN [order-service,,] 8644 --- [RMI TCP Connection(161)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [cluster-ClusterId{value='60efcd003f5b2b2cdd3d23a1', description='null'}-localhost:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@15.0.2/sun.nio.ch.Net.poll(Native Method)
+ java.base@15.0.2/sun.nio.ch.NioSocketImpl.park(NioSocketImpl.java:181)
+ java.base@15.0.2/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:285)
+ java.base@15.0.2/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:309)
+ java.base@15.0.2/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:350)
+ java.base@15.0.2/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:803)
+ java.base@15.0.2/java.net.Socket$SocketInputStream.read(Socket.java:981)
+ app//com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+ app//com.mongodb.internal.connection.SocketStream.read(SocketStream.java:131)
+ app//com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:648)
+ app//com.mongodb.internal.connection.InternalStreamConnection.receiveMessageWithAdditionalTimeout(InternalStreamConnection.java:513)
+ app//com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:356)
+ app//com.mongodb.internal.connection.InternalStreamConnection.receive(InternalStreamConnection.java:316)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:215)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:144)
+ java.base@15.0.2/java.lang.Thread.run(Thread.java:832)
+2021-07-15 13:58:11.048  WARN [order-service,,] 8644 --- [RMI TCP Connection(161)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [cluster-rtt-ClusterId{value='60efcd003f5b2b2cdd3d23a1', description='null'}-localhost:27017] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@15.0.2/java.lang.Thread.sleep(Native Method)
+ app//com.mongodb.internal.connection.DefaultServerMonitor.waitForNext(DefaultServerMonitor.java:435)
+ app//com.mongodb.internal.connection.DefaultServerMonitor.access$1300(DefaultServerMonitor.java:57)
+ app//com.mongodb.internal.connection.DefaultServerMonitor$RoundTripTimeRunnable.run(DefaultServerMonitor.java:409)
+ java.base@15.0.2/java.lang.Thread.run(Thread.java:832)
+2021-07-15 13:58:11.051  WARN [order-service,,] 8644 --- [RMI TCP Connection(161)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [spring.cloud.inetutils] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@15.0.2/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@15.0.2/java.util.concurrent.locks.LockSupport.park(LockSupport.java:341)
+ java.base@15.0.2/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionNode.block(AbstractQueuedSynchronizer.java:505)
+ java.base@15.0.2/java.util.concurrent.ForkJoinPool.managedBlock(ForkJoinPool.java:3137)
+ java.base@15.0.2/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(AbstractQueuedSynchronizer.java:1614)
+ java.base@15.0.2/java.util.concurrent.LinkedBlockingQueue.take(LinkedBlockingQueue.java:435)
+ java.base@15.0.2/java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1056)
+ java.base@15.0.2/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1116)
+ java.base@15.0.2/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+ java.base@15.0.2/java.lang.Thread.run(Thread.java:832)
+2021-07-15 13:58:11.052  WARN [order-service,,] 8644 --- [RMI TCP Connection(161)-127.0.0.1] o.a.c.loader.WebappClassLoaderBase       : The web application [ROOT] appears to have started a thread named [AsyncReporter{RestTemplateSender{http://localhost:9411/api/v2/spans}}] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.base@15.0.2/jdk.internal.misc.Unsafe.park(Native Method)
+ java.base@15.0.2/java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:252)
+ java.base@15.0.2/java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:1661)
+ app//zipkin2.reporter.ByteBoundedQueue.drainTo(ByteBoundedQueue.java:81)
+ app//zipkin2.reporter.AsyncReporter$BoundedAsyncReporter.flush(AsyncReporter.java:270)
+ app//zipkin2.reporter.AsyncReporter$Flusher.run(AsyncReporter.java:378)
+ java.base@15.0.2/java.lang.Thread.run(Thread.java:832)
+2021-07-15 13:58:11.110  INFO [order-service,,] 8644 --- [RMI TCP Connection(161)-127.0.0.1] org.mongodb.driver.connection            : Closed connection [connectionId{localValue:3, serverValue:3}] to localhost:27017 because the pool has been closed.
+2021-07-15 13:58:11.519  INFO [order-service,,] 8644 --- [RMI TCP Connection(161)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2021-07-15 13:58:14.545  INFO [order-service,,] 8644 --- [RMI TCP Connection(161)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2021-07-15 13:58:14.552  INFO [order-service,,] 8644 --- [RMI TCP Connection(161)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/order-service:3f1481fa3973947228915238233b8a58 - deregister  status: 200
+2021-07-15 13:58:14.727  INFO [order-service,,] 8644 --- [RMI TCP Connection(161)-127.0.0.1] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
