@@ -1,0 +1,22 @@
+logging:
+  file:
+    name: rental-ws.log
+server:
+  port: ${PORT:0}
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/hr
+    username: root
+    password: root
+ # jpa:
+  #  hibernate:
+  #    ddl-auto: create
+  application:
+    name: rental-app-service
+  cloud:
+    config:
+      uri: http://localhost:8888
+      enabled: true
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
