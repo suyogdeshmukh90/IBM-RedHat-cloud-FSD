@@ -14,6 +14,9 @@ spring:
     config:
       uri: http://localhost:8888
       enabled: true
+  #jpa:
+    #hibernate:
+      #ddl-auto: create
 eureka:
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
