@@ -1,0 +1,27 @@
+version: '3.7'
+services:
+  naming-server:
+    build:
+      context: eureka-server
+      dockerfile: Dockerfile
+    ports:
+      - "8761:8761"
+    restart: always
+  hello-world-service:
+    build:
+      context: hello-world-service
+      dockerfile: Dockerfile    
+    ports:
+      - "8181:8181"
+    restart: always
+    depends_on:
+      - naming-server
+  trainee-service:
+    build:
+      context: trainee-service
+      dockerfile: Dockerfile    
+    ports:
+      - "8282:8282"
+    restart: always
+    depends_on:
+      - naming-server

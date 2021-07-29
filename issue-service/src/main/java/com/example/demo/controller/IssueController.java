@@ -24,7 +24,7 @@ import com.example.demo.proxy.AssigneeClient;
 import com.example.demo.service.IssueService;
 import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 
-@RestController
+@RestController 
 public class IssueController {
 	private IssueService issueService;
 	private Environment environment;
